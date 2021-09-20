@@ -1,6 +1,4 @@
 import pytest
-import os
-import uuid
 import importlib.util
 import importlib.machinery
 

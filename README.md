@@ -52,12 +52,15 @@
         
 ------------------------------------------------------------------------------------------------------------------------------------------
         
-* python and pip are required to run some command lines, check the python.org to install python, 
-  then in your terminal check if you already have the pip using the command line: pip --version
-  if you don't have pip in your pc, go to https://pip.pypa.io/en/stable/installation, or try to run 'python3 -m pip', 'easy_install pip'
+* python and pip are required to run some command lines, check the python.org to install python, then in your terminal check if you already have the pip using the command line: pip --version
+if you don't have pip in your pc, go to https://pip.pypa.io/en/stable/installation, or try to run 'python3 -m pip', 'easy_install pip'
+  
 ** pytest documentation about getting started and installation: https://docs.pytest.org/en/6.2.x/getting-started.html
--------------------------------------------------------------------------------------------------------------------------------------------
+
 *** this is just an example, you'll add your application's base api url, with this base_api_url all the other requests you'll just increment the rest of the url 
+
 **** this line gets the request import, send this a request as a get and the url that is trying to use 
+
 ***** this line creates a variable to shorten your coding, instead of using nameOfYourApi.Test_nameOfYourApi everytime, you'll only use self.exampleApi
+
 ****** this line is checking if the expected status code is being returned, if not the test will fail.

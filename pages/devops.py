@@ -13,5 +13,9 @@ class Test_devops():
     def create_new_vehicle(self, vehicle_id):
         data = {"vehicle_id": vehicle_id}
         return self.http_client.request("POST", f"{self.get_vehicle_by_id}", json=data)
-        
-# caso precise montar uma url, faça assim: return self.http_client.request("GET", f"{self.get_vehicle_by_id}/{self.vehicle_id}")
+
+    def find_vehicle(self, vehicle_id):
+        return self.http_client.request("GET", f"{self.get_vehicle_by_id}/{self.vehicle_id}")
+
+    def get_vehicles(self):
+        return self.http_client.request("GET", f"{self.get_all_vehicles}")

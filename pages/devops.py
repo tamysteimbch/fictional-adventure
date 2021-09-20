@@ -1,5 +1,4 @@
 import requests
-import requests.status_codes
 
 class Test_devops():
     def __init__(self, client=requests):

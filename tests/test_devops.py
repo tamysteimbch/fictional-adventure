@@ -15,3 +15,11 @@ class TestDevopsApi:
     def test_create_new_vehicle(self):
         response = self.devopsApi.create_new_vehicle("honda", "civic", "silver", "2009-03-02T13:23:41.12")
         assert response.status_code == 201
+
+    def test_find_vehicle(self):
+        response = self.devopsApi.find_vehicle(1)
+        assert response.status_code == 200
+
+    def test_get_vehicles(self):
+        response = self.devopsApi.get_vehicles()
+        assert response.status_code == 200

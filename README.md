@@ -6,6 +6,7 @@
      - clone this repository and this one = 'https://github.com/DouglasGorges/DevOps-TestsServer'
      - run the file VehiclesApplication.java from the DevOps-TestsServer (check which port it's running the tomcat, the default is 8080)
      - in your terminal, access the fictional-adventure directory:
+       * run the line 'pip install requirements'
        *in the same terminal, type this command line 'pytest tests/test_devops.py'
         this command line will run every test that is in test_devops.py, if you want to run just one specific function run this:
         'pytest tests/test_devops.py::TestDevopsApi::<the name of the test you want to run>'
@@ -17,6 +18,7 @@
       - create a repo in github and clone it into your pc (optional);
       - in your project folder, install pytest using 'pip install -U pytest';
       - check if you downloaded the latest version using 'pytest --version' **;
+      - install the api requirements, use 'pip install requirements'
       - create a separate folder to create the POST, GET.. etc requests, name it 'pages';
       - create another folder to create the actual test, name it 'tests'
       - pages folder:

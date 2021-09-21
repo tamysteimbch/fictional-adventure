@@ -16,13 +16,19 @@ class Test_devops():
                 "color": color,
                 "manufacturedAt": manufacturedAt}
         return self.http_client.request("POST", self.base_api_url, json=data)
+    
+    def find_vehicle(self, vehicle_id):
+        return self.http_client.request("GET", f"{self.get_vehicle_by_id}/{vehicle_id}")
+
+    def get_vehicles(self):
+        return self.http_client.request("GET", f"{self.get_all_vehicles}")
 
     def update_vehicle(self, manufacturer, model, color, manufacturedAt, vehicle_id):
         data = {"manufacturer": manufacturer,
                 "model": model,
                 "color": color,
                 "manufacturedAt": manufacturedAt}
-        id = vehicle_id
-        return self.http_client.request("PUT", f"{self.base_api_url}/{id}", json=data)
-        
-# caso precise montar uma url, faça assim: return self.http_client.request("GET", f"{self.get_vehicle_by_id}/{self.vehicle_id}")
+        return self.http_client.request("PUT", f"{self.base_api_url}/{vehicle_id}", json=data)
+
+    def delete_vehicle(self, vehicle_id):
+        return self.http_client.request("DELETE", f"{self.base_api_url}/{vehicle_id}")

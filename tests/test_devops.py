@@ -16,6 +16,23 @@ class TestDevopsApi:
         response = self.devopsApi.create_new_vehicle("honda", "civic", "silver", "2009-03-02T13:23:41.12")
         assert response.status_code == 201
 
+    def test_find_vehicle(self):
+        response = self.devopsApi.find_vehicle(1)
+        assert response.status_code == 200
+
+    def test_get_vehicles(self):
+        response = self.devopsApi.get_vehicles()
+        assert response.status_code == 200
+
+    def test_update_vehicle(self):
+        response = self.devopsApi.update_vehicle("hondaUpdated", "civicUpdated", "silverUpdated", "2021-08-20T13:22:22.22", 1)
+        assert response.status_code == 200
+
+    def test_delete_vehicle(self):
+        response = self.devopsApi.delete_vehicle(1)
+        assert response.status_code == 204
+
+
     def test_update_vehicle(self):
         response = self.devopsApi.update_vehicle("hondaUpdated", "civicUpdated", "silverUpdated", "2021-03-02T13:22:22.22", "11")
         assert response.status_code == 200

@@ -22,3 +22,6 @@ class Test_devops():
 
     def get_vehicles(self):
         return self.http_client.request("GET", f"{self.get_all_vehicles}")
+
+    def delete_vehicle(self, vehicle_id):
+        return self.http_client.request("DELETE", f"{self.base_api_url}/{vehicle_id}")

@@ -23,3 +23,7 @@ class TestDevopsApi:
     def test_get_vehicles(self):
         response = self.devopsApi.get_vehicles()
         assert response.status_code == 200
+     
+    def test_delete_vehicle(self):
+        response = self.devopsApi.delete_vehicle(1)
+        assert response.status_code == 204

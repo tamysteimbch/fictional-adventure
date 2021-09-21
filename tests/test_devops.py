@@ -1,20 +1,20 @@
 import pytest
-import os
-import uuid
+import importlib.util
+import importlib.machinery
 
-from pages.devops import Test_devops
-from utils import status_codes
+# import and load modules
+loader = importlib.machinery.SourceFileLoader('devops', './pages/devops.py')
+spec = importlib.util.spec_from_loader('devops', loader)
+devops = importlib.util.module_from_spec(spec)
+loader.exec_module(devops)
 
-@pytest.mark.usefixtures("fixture.py")
 class TestDevopsApi:
-    @pytest.fixture(autouse=True)
     def setup(self):
-        self.devopsApi = Test_devops()
+        self.devopsApi = devops.Test_devops()
 
     def test_create_new_vehicle(self):
-        new_vehicle_id = '1'
-        response = self.devopsApi.create_new_vehicle(new_vehicle_id)
-        result = response.status_codes == 200
+        response = self.devopsApi.create_new_vehicle("honda", "civic", "silver", "2009-03-02T13:23:41.12")
+        assert response.status_code == 201
 
     def test_find_vehicle(self):
         vehicle_id = '1'

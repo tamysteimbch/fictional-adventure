@@ -17,10 +17,9 @@ class TestDevopsApi:
         assert response.status_code == 201
 
     def test_find_vehicle(self):
-        vehicle_id = '1'
-        response = self.devopsApi.find_vehicle(vehicle_id)
-        result = response.status_codes == 200
+        response = self.devopsApi.find_vehicle(1)
+        assert response.status_code == 200
 
     def test_get_vehicles(self):
         response = self.devopsApi.get_vehicles()
-        result = response.status_codes == 200
+        assert response.status_code == 200

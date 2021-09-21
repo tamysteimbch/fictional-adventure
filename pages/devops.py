@@ -16,5 +16,3 @@ class Test_devops():
                 "color": color,
                 "manufacturedAt": manufacturedAt}
         return self.http_client.request("POST", self.base_api_url, json=data)
-        
-# caso precise montar uma url, faça assim: return self.http_client.request("GET", f"{self.get_vehicle_by_id}/{self.vehicle_id}")

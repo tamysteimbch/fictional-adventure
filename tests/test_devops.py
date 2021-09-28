@@ -11,7 +11,7 @@ loader.exec_module(devops)
 
 class TestDevopsApi:
     def setup(self):
-        self.devopsApi = devops.Test_devops()
+        self.devopsApi = devops.DevopsAPI()
 
     def test_create_new_vehicle(self):
         response = self.devopsApi.create_new_vehicle("honda", "civic", "silver", "2009-03-02T13:23:41.12")

@@ -1,6 +1,6 @@
 import requests
 
-class Test_devops():
+class DevopsAPI():
     def __init__(self, client=requests):
         super().__init__()
         self.base_api_url = "http://localhost:8080/vehicles"

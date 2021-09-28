@@ -7,6 +7,7 @@
      - run the file VehiclesApplication.java from the DevOps-TestsServer (check which port it's running the tomcat, the default is 8080)
      - in your terminal, access the fictional-adventure directory:
        * run the line 'pip install requirements'
+       * run the line 'pip install coverage'
        *in the same terminal, type this command line 'pytest tests/test_devops.py'
         this command line will run every test that is in test_devops.py, if you want to run just one specific function run this:
         'pytest tests/test_devops.py::TestDevopsApi::<the name of the test you want to run>'
